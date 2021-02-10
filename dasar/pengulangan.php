@@ -1,11 +1,11 @@
 <?php
 //for, do while, while, foreach
 
+
+//for
 // inisialisasi = variable awal
 // kondisi terminasi == memberhentikan pengulangan
 // decrement increment = penentuan maju mundur pengulangan
-
-//for
 for($y = 5; $y < 10; $y++){
     echo "Hello world!<br>";
 }

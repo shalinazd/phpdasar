@@ -4,6 +4,7 @@
 $nama = "jaemin";
 $umur = 20;
 echo $nama;
+echo "<br>";
 echo $umur;
 
 ?>

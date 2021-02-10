@@ -10,7 +10,6 @@ echo "<p>";
 
 //operator aritmatika
 // + - * / %
-
 $x = 20;
 $y = 10;
 
@@ -26,7 +25,6 @@ echo "<p>";
 
 //operator assignment
 // =, +=, -=, /=, *=, %=, .=
-
 $r = 1;
 $r += 5;
 
@@ -39,29 +37,27 @@ $nama .= "na";
 echo $nama;
 echo "<p>";
 
+
+
 //operator perbandingan
-// < > <= >= == !=
-// var_dump = untuk debugging, menampilkan informasi dari variable
+// <, >, <=, >=, ==, !=
+//var_dump = menampilkan informasi dari variable
+var_dump(1 == "1") ;
+echo "<p>";
 
-var_dump("jaemin");
-echo "<br>";
-var_dump(05);
-echo "<br>";
-
-// ga mentingin tipe data
-var_dump(1 <= "5");
 
 //operator identitas
 // ===
+var_dump("jaemin");
 echo "<br>";
+var_dump(05);
+echo "<p>";
 
-//tipe data ngaruh
-var_dump(1 === "1");
+
 
 //operator logika
 // &&, ||
-
-echo "<br>";
+echo "<p>";
 $x = 20;
 
 var_dump($x < 10 || $x == 20);
