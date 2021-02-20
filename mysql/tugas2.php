@@ -26,7 +26,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_movie");
 
             <tr>
                 <td><?= $i;?></td>
-                <td><img src="img/img1.jpeg"width="50"></td>
+                <td><img src="img_tugas2/<?= $row["movie_posters"]; ?>"width="80"></td>
                 <td><?= $row["movie_title"]?></td>
                 <td><?= $row["movie_duration"]?></td>
                 <td><?= $row["cinema_room"]?></td>
