@@ -5,7 +5,7 @@ $db = mysqli_connect("localhost", "root", "", "db_phpdasar");
 
 //ambil data dr table
 $result = mysqli_query($db, "SELECT * FROM tb_siswa");
-var_dump($result);
+// var_dump($result);
 
 //ambil data (fetch) mahasiswa
 
@@ -43,7 +43,7 @@ var_dump($result);
 
             <tr>
                 <td><?= $i;?></td>
-                <td><img src="img/<?= $row["gambar_siswa"]; ?>"width="50"></td>
+                <td><img src="img/<?= $row["gambar_siswa"]?>"width="50"></td>
                 <td><?= $row["nama_siswa"]?></td>
                 <td><?= $row["kelas_siswa"]?></td>
                 <td><?= $row["email_siswa"]?></td>
