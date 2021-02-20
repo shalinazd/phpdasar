@@ -2,7 +2,7 @@
 $conn = mysqli_connect("localhost", "root", "", "db_phpdasar");
 $result = mysqli_query($conn, "SELECT * FROM tb_movie");
 ?>
-
+ <!-- asnjasnjaksndkja -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
