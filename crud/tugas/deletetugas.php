@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require 'functionstugas.php';
 $id = $_GET["id"];
 
 if(delete($id) > 0){

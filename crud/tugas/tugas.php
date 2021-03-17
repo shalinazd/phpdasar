@@ -30,7 +30,7 @@ $result = mysqli_query($conn, "SELECT * FROM tb_movie");
                 <td><?= $i;?></td>
                 <td>
                     <a href="">change</a>
-                    <a href="">delete</a>
+                    <a href="delete.php">delete</a>
                 </td>
                 <td><img src="img/<?= $row["movie_posters"]?>"width="50"></td>
                 <td><?= $row["movie_title"]?></td>

@@ -28,4 +28,13 @@ function add($post){
      mysqli_query($db, $query);
      return mysqli_affected_rows($db);
 }
+
+function delete($id){
+    global $db;
+    $delete = "DELETE FROM tb_movie WHERE id_siswa=$id";
+    mysqli_query($db, $delete);
+    return mysqli_affected_rows($db);
+}
+
+
 ?>

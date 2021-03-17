@@ -4,7 +4,7 @@ require 'functions.php';
 //(host, user, pass, nama database)
 
 //ambil data dr table
-$siswa = query("SELECT * FROM tb_siswa");
+$siswa = get("SELECT * FROM tb_siswa");
 // var_dump($result);
 
 //ambil data (fetch) mahasiswa
@@ -46,8 +46,8 @@ $siswa = query("SELECT * FROM tb_siswa");
             <tr>
                 <td><?= $i;?></td>
                 <td>
-                    <a href="">change</a>
-                    <a href="">delete</a>
+                    <a href="change.php?id=<?= $row["id_siswa"];?>">change</a>
+                    <a href="delete.php?id=<?= $row["id_siswa"];?>">delete</a>
                 </td>
                 <td><img src="img/<?= $row["gambar_siswa"]?>"width="50"></td>
                 <td><?= $row["nama_siswa"]?></td>
