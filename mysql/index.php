@@ -1,4 +1,5 @@
 <?php
+
 require 'functions.php';
 //connect ke database
 //(host, user, pass, nama database)
@@ -6,6 +7,15 @@ require 'functions.php';
 //ambil data dr table
 $siswa = query("SELECT * FROM tb_siswa");
 // var_dump($result);
+
+//connect ke database
+//(host, user, pass, nama database)
+$db = mysqli_connect("localhost", "root", "", "db_phpdasar");
+
+//ambil data dr table
+$result = mysqli_query($db, "SELECT * FROM tb_siswa");
+var_dump($result);
+
 
 //ambil data (fetch) mahasiswa
 
@@ -39,17 +49,29 @@ $siswa = query("SELECT * FROM tb_siswa");
         </tr>
 
         <?php $i = 1;?>
+
         <?php foreach($siswa as $row):?>
 
             <tr>
                 <td><?= $i;?></td>
                 <td><img src="img/<?= $row["gambar_siswa"]?>"width="50"></td>
+
+        <?php while($row = mysqli_fetch_assoc($result)):?>
+
+            <tr>
+                <td><?= $i;?></td>
+                <td><img src="img/<?= $row["gambar_siswa"]; ?>"width="50"></td>
+
                 <td><?= $row["nama_siswa"]?></td>
                 <td><?= $row["kelas_siswa"]?></td>
                 <td><?= $row["email_siswa"]?></td>
             </tr>
             <?php $i++ ?>
+<?php endwhile; ?>
         <?php endforeach; ?>
+
+        
+
     </table>
 </body>
 </html>
