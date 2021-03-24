@@ -1,10 +1,7 @@
 <?php
-//mysqli_connect = buat connect ke database
-//mysqli_query = buat connect ke table
-//mysqli_fetch_assoc == nge get
 $db = mysqli_connect("localhost", "root", "", "db_phpdasar");
 
-function query($query){
+function get($query){
     global $db;
     $result = mysqli_query($db, $query);
     $rows = [];
@@ -16,25 +13,41 @@ function query($query){
 
 function add($post){
     global $db;
-
-    //ambil datadari setiap elemen form
     $title = $post["movie_title"];
     $posters = $post["movie_posters"];
-    $duration = $post["movie_duration"];
-    $cinemaroom = $post["cinema_room"];
+    $rate = $post["movie_rate"];
 
      //query insert data
-     $query = "INSERT INTO tb_movie VALUES(null, '$posters', '$title', '$duration', '$cinemaroom')";
+     $query = "INSERT INTO tb_movie VALUES(null, '$title', '$posters', '$rate')";
      mysqli_query($db, $query);
      return mysqli_affected_rows($db);
 }
 
 function delete($id){
     global $db;
-    $delete = "DELETE FROM tb_movie WHERE id_siswa=$id";
+    $delete = "DELETE FROM tb_movie WHERE id_movie=$id";
     mysqli_query($db, $delete);
     return mysqli_affected_rows($db);
 }
 
+function change($data){
+    global $db;
+    $id= $data["id_movie"];
+    $title = $data["movie_title"];
+    $posters = $data["movie_posters"];
+    $rate= $data["movie_rate"];
+   
 
+    $query = "UPDATE tb_movie SET 
+    movie_title = '$title',
+    movie_posters = '$posters',
+    movie_rate = '$rate'
+
+    WHERE id_movie= $id";
+    
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
+    
+
+}
 ?>

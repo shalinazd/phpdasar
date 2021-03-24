@@ -1,5 +1,9 @@
 <?php
 require 'functionstugas.php';
+//connect ke database
+
+
+//cek apakah button submit sudah diclick atau belum
 if(isset($_POST["submit"])){
     if(add($_POST) > 0){
         echo "
@@ -14,7 +18,12 @@ if(isset($_POST["submit"])){
             alert('failed to add');
             document.location.href = 'tugas.php';
             </script>
-        ";}}
+        ";
+    }
+
+   
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,21 +34,22 @@ if(isset($_POST["submit"])){
     <title>Document</title>
 </head>
 <body>
-    <h1>Add Student Data</h1>
+    <h1>Add Movie </h1>
     <form action="" method="post">
-        <label for="movie_posters">Poster : </label>
+        <label for="movie_posters">Posters : </label>
         <input type="text" name="movie_posters" id="movie_posters" required></input>
         <p>
+
         <label for="movie_title">Title : </label>
         <input type="text" name="movie_title" id="movie_title" required></input>
         <p>
-        <label for="movie_duration">Duration : </label>
-        <input type="text" name="movie_duration" id="movie_duration" required></input>
+
+        <label for="movie_rate">Rate : </label>
+        <input type="text" name="movie_rate" id="movie_rate" required></input>
         <p>
-        <label for="cinema_room">Cinema Room : </label>
-        <input type="text" name="cinema_room" id="cinema_room" required></input>
-        <p>
+        
         <button type="submit" name="submit"> submit </submit>
     </form>
+    
 </body>
 </html>

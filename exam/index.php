@@ -19,7 +19,7 @@ $doll = get("SELECT * FROM tb_exam");
             <th>Action</th>
             <th>Pict</th>
             <th>Name</th>
-            <th>Class</th>
+            <th>Price</th>
             
         </tr>
 

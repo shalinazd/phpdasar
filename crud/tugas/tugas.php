@@ -1,8 +1,8 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "db_phpdasar");
-$result = mysqli_query($conn, "SELECT * FROM tb_movie");
+require 'functionstugas.php';
+$movie = get("SELECT * FROM tb_movie");
 ?>
- <!-- asnjasnjaksndkja -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,34 +11,33 @@ $result = mysqli_query($conn, "SELECT * FROM tb_movie");
     <title>Document</title>
 </head>
 <body>
-    <h1>Movie List</h1>
-    <a href="addtugas.php"> add student data </a>
+    <h1>List of movie</h1>
+    <a href="addtugas.php"> add movie </a>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No</th>
             <th>Action</th>
             <th>Posters</th>
             <th>Title</th>
-            <th>Duration</th>
-            <th>Cinema Room</th>
+            <th>Rating</th>
+            
         </tr>
 
         <?php $i = 1;?>
-        <?php while($row = mysqli_fetch_assoc($result)):?>
+        <?php foreach($movie as $row):?>
 
             <tr>
                 <td><?= $i;?></td>
                 <td>
-                    <a href="">change</a>
-                    <a href="delete.php">delete</a>
+                    <a href="changetugas.php?id=<?= $row["id_movie"];?>">change</a>
+                    <a href="deletetugas.php?id=<?= $row["id_movie"];?>">delete</a>
                 </td>
-                <td><img src="img/<?= $row["movie_posters"]?>"width="50"></td>
-                <td><?= $row["movie_title"]?></td>
-                <td><?= $row["movie_duration"]?></td>
-                <td><?= $row["cinema_room"]?></td>
+                <td><img src="img<?= $row["movie_posters"];?>" width="100" height="150"></td>
+                <td><?= $row["movie_title"];?></td>
+                <td><?= $row["movie_rate"];?></td>
             </tr>
             <?php $i++ ?>
-        <?php endwhile; ?>
+        <?php endforeach; ?>
     </table>
 </body>
 </html>
