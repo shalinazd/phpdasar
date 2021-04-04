@@ -1,6 +1,10 @@
 <?php
 require 'functionstugas.php';
 $movie = get("SELECT * FROM tb_movie");
+
+if (isset($_POST["search"])){
+    $siswa = cari($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +17,10 @@ $movie = get("SELECT * FROM tb_movie");
 <body>
     <h1>List of movie</h1>
     <a href="addtugas.php"> add movie </a>
+    <form action="" method="post">
+        <input type="text" name="keyword" size="40" autofocus placeholder="search here!" autocomplete="off">
+        <button type="submit" name="search"> Search </button>
+    </form>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No</th>

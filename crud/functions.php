@@ -24,7 +24,7 @@ function add($post){
     $class = $post["kelas_siswa"];
 
      //query insert data
-     $query = "INSERT INTO tb_siswa VALUES(null, '$pict', '$name', '$class', '$name')";
+     $query = "INSERT INTO tb_siswa VALUES(null, '$pict', '$name', '$class', '$class')";
      mysqli_query($db, $query);
      return mysqli_affected_rows($db);
 }
@@ -56,6 +56,16 @@ function change($data){
     mysqli_query($db, $query);
     return mysqli_affected_rows($db);
     
+
+}
+
+function cari($keyword){
+    $query = "SELECT * FROM tb_siswa WHERE 
+    nama_siswa = '%keyword%' OR
+    email_siswa = '%keyword%' OR
+    kelas_siswa = '%keyword%'" ;
+    return get($query);
+
 
 }
 ?>
